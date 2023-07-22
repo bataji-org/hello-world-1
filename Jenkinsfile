@@ -23,6 +23,12 @@ pipeline{
          mvnTest()
          }      
      }
+      stage('integrationTest mvn'){
+
+         steps{
+         mvnIntegrationTest()
+         }      
+     }
    }
 }
 
