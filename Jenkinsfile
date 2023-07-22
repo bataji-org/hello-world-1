@@ -9,10 +9,11 @@ pipeline{
    }
 
    stages{
-     when {
-     environment name: 'action', value: 'create'
-     }
+    
      stage('checkout code'){
+         when {
+         environment name: 'action', value: 'create'
+         }
 
          steps{
          gitCheckout(
