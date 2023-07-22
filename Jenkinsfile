@@ -12,7 +12,7 @@ pipeline{
          gitCheckout(
             
            branch: 'master', 
-           url: 'https://github.com/Vireshgit/hello-world-1.git'
+           url: 'https://github.com/bataji-org/hello-world-1.git'
 
          )
          }      
