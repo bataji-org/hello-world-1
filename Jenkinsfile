@@ -18,7 +18,7 @@ pipeline{
          gitCheckout(
             
            branch: 'main', 
-           url: https://github.com/bataji-org/hello-world-1.git
+           url: "https://github.com/bataji-org/hello-world-1.git"
 
          )
          }      
