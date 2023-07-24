@@ -3,38 +3,23 @@
 pipeline{
 
    agent any
-
-
    stages{
-
      stage('checkout code'){
-     
-
          steps{
-         gitCheckout(
-            
+         gitCheckout( 
            branch: 'master', 
            url: "https://github.com/bataji-org/hello-world-1.git"
-
          )
          }      
      }
-
      stage('Unit Test maven'){
-    
-
          steps{
-
          mvnTest()
-
          }
      }
       stage('Integration Test maven'){
-     
          steps{
-
          mvnIntegrationTest()
-
          }
      }
       stage('static code check: sonarqube'){
@@ -50,6 +35,13 @@ pipeline{
             script{
                def SonarqubeCredentialsId = 'sonar-api'
                QualityGateStatus(SonarqubeCredentialsId)
+            }
+         }
+     }
+      stage('Maven Build'){
+         steps{
+            script{
+               mvnTest()
             }
          }
      }
