@@ -3,14 +3,14 @@
 pipeline{
 
    agent any
-   parameters {
+   #parameters {
      choice choices: ['create', 'delete'], description: 'choose create/delete', name: 'action'
    }
 
    stages{
 
      stage('checkout code'){
-         when {
+         #when {
            environment name: 'action', value: 'create'
          }
 
@@ -25,7 +25,7 @@ pipeline{
      }
 
      stage('Unit Test maven'){
-        when {
+        #when {
            environment name: 'action', value: 'delete'
          }
 
@@ -36,7 +36,7 @@ pipeline{
          }
      }
       stage('Integration Test maven'){
-          when {
+          #when {
            environment name: 'action', value: 'delete'
          }
 
@@ -47,13 +47,14 @@ pipeline{
          }
      }
       stage('static code check: sonarqube'){
-          when {
+          #when {
            environment name: 'action', value: 'delete'
          }
 
          steps{
-         def SonarqubeCredentialsId = 'sonar-api'
-         staticCodeAnalysis(SonarqubeCredentialsId)
+            
+             def SonarqubeCredentialsId = 'sonar-api'
+             staticCodeAnalysis(SonarqubeCredentialsId)
 
          }
      }
