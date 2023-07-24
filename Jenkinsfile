@@ -11,7 +11,7 @@ pipeline{
          steps{
          gitCheckout(
             
-           branch: 'main', 
+           branch: 'master', 
            url: "https://github.com/bataji-org/hello-world-1.git"
 
          )
