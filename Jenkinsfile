@@ -38,12 +38,18 @@ pipeline{
          }
      }
       stage('static code check: sonarqube'){
-  
-
          steps{
             script{
                def SonarqubeCredentialsId = 'sonar-api'
                staticCodeAnalysis(SonarqubeCredentialsId)
+            }
+         }
+     }
+      stage('Quality gate status check: sonarqube'){
+         steps{
+            script{
+               def SonarqubeCredentialsId = 'sonar-api'
+               QualityGateStatus(SonarqubeCredentialsId)
             }
          }
      }
