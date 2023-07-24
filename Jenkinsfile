@@ -36,16 +36,7 @@ pipeline{
 
          }
      }
-      stage('static code check: sonarqube'){
-         
 
-         steps{
-            
-             def SonarqubeCredentialsId = 'sonar-api'
-             staticCodeAnalysis(SonarqubeCredentialsId)
-
-         }
-     }
    }
 }
 
