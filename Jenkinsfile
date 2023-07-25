@@ -5,7 +5,7 @@ pipeline{
    agent any
    parameters {
      string defaultValue: 'vnaik1', description: 'enter hubUserName', name: 'hubUserName'
-     string defaultValue: 'helloImage', description: 'enter imageName', name: 'imageName'
+     string defaultValue: 'helloimage', description: 'enter imageName', name: 'imageName'
      string defaultValue: 'v1', description: 'enter imageTag', name: 'imageTag'
    }
 
