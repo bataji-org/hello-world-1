@@ -59,6 +59,13 @@ pipeline{
             }
          }
      }
+     stage('Image Scan: Trivy'){
+         steps{
+            script{
+               imageScan("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+            }
+         }
+     }
      stage('Push docker Image'){
          steps{
             script{
