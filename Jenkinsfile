@@ -73,7 +73,7 @@ pipeline{
             }
          }
      }
-     stage('Push docker Image'){
+     stage('docker image cleanup'){
          steps{
             script{
                dockerImagecleanup("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
