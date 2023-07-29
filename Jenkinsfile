@@ -45,7 +45,7 @@ pipeline{
      //        }
      //     }
      // }
-      stage('Maven Build'){
+     stage('Maven Build'){
          steps{
             script{
                buildMaven()
@@ -59,7 +59,7 @@ pipeline{
             }
          }
      }
-      stage('Push docker Image'){
+     stage('Push docker Image'){
          steps{
             script{
                pushImagedhub("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
