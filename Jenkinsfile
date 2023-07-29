@@ -59,5 +59,12 @@ pipeline{
             }
          }
      }
+      stage('Push docker Image'){
+         steps{
+            script{
+               imagePUshToDockerhub("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+            }
+         }
+     }
    }
 }
