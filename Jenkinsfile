@@ -45,40 +45,40 @@ pipeline{
      //        }
      //     }
      // }
-     stage('Maven Build'){
-         steps{
-            script{
-               buildMaven()
-            }
-         }
-     }
-     stage('Build docker Image'){
-         steps{
-            script{
-               dockerBuild("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
-            }
-         }
-     }
-     stage('Image Scan: Trivy'){
-         steps{
-            script{
-               imageScan("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
-            }
-         }
-     }
-     stage('Push docker Image'){
-         steps{
-            script{
-               pushImagedhub("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
-            }
-         }
-     }
-     stage('docker image cleanup'){
-         steps{
-            script{
-               dockerImagecleanup("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
-            }
-         }
-     }
+     // stage('Maven Build'){
+     //     steps{
+     //        script{
+     //           buildMaven()
+     //        }
+     //     }
+     // }
+     // stage('Build docker Image'){
+     //     steps{
+     //        script{
+     //           dockerBuild("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+     //        }
+     //     }
+     // }
+     // stage('Image Scan: Trivy'){
+     //     steps{
+     //        script{
+     //           imageScan("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+     //        }
+     //     }
+     // }
+     // stage('Push docker Image'){
+     //     steps{
+     //        script{
+     //           pushImagedhub("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+     //        }
+     //     }
+     // }
+     // stage('docker image cleanup'){
+     //     steps{
+     //        script{
+     //           dockerImagecleanup("${params.hubUserName}", "${params.imageName}", "${params.imageTag}")
+     //        }
+     //     }
+     // }
    }
 }
